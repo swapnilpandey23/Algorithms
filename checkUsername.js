@@ -1,4 +1,7 @@
-/* You need to check all the usernames in a database. Here are some simple rules that users have to follow when creating their username.
+/*
+Restrict Possible Usernames***
+
+You need to check all the usernames in a database. Here are some simple rules that users have to follow when creating their username.
 
 Usernames can only use alpha-numeric characters.
 
