@@ -10,6 +10,7 @@ function Dog(name) {
   
   // Adding prototype properties to Dog as object
   Dog.prototype = {
+    constructor : Dog,  //Defining constructor property.
     numLegs : 4,
     eat : function(){
       console.log('nom nom nom');
