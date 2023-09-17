@@ -1,9 +1,7 @@
 // This program shows inheritance in JavaScript, refer to comments, I've tried to comment out operations as simple as I could. 
 
+function Animal() {}
 
-function Animal() { }
-
-// Prototype of a constructor function. 
 Animal.prototype = {
   constructor: Animal,
   eat: function() {
@@ -22,9 +20,18 @@ function Bird() {}
 Dog.prototype = Object.create(Animal.prototype);
 Bird.prototype = Object.create(Animal.prototype);
 
+// ** When an object inherits it's prototype from another object, it also inherits Supertype's constructor property.
+// ** Setting constructor property of Bird and Dog, so that the instances should know from where they were actually constructed.
+Dog.prototype.constructor = Dog;
+Bird.prototype.constructor = Bird;
+
 // Creating instance of the Subtypes(Child).
 let duck = new Bird();
 let labrador = new Dog();
+
+// Instances know from where they were actually constructed.
+console.log(duck.constructor);
+console.log(labrador.constructor);
 
 // Using Supertype method with Subtype's instances.
 labrador.eat();
